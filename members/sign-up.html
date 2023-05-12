@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sign-up.css">
+    <title>Mountain-Do join-up</title>
+</head>
+
+<body>
+    <div class="container">
+            <div class="sign-up-wrap">
+                <div class="sign-up-header">
+                    <div class="header">
+                        <h1 class="head1">Mountain-Do 회원 가입</h1>
+                    </div>
+                    <div class="head2">
+                        <p> 제한없이 트래킹을 즐기는 사람들의 놀이터,</p>
+                        <p> 정보제공, 커뮤니티, 자원공유 서비스를 이용해보세요. </p>
+                    </div>
+                </div>
+
+                <div class="sign-up-body">
+                    <form action="/members/sign-up" name="signup" id="signUpForm" method="post">
+                        <ul>
+                            <li>
+                                <div>아이디</div>
+                                <div>
+                                    <input type="text" name="account-id" id="accound-id" class="form-control"
+                                        maxlength="15" required="required" aria-required="true"
+                                        placeholder="영문, 숫자를 조합하여 4-14자리">
+                                    <span id="idChk"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>비밀번호</div>
+                                <input type="password" name="password" id="password" size="17" maxlength="20"
+                                    class="form-control" maxlength="20" required="required" aria-required="true"
+                                    placeholder="8자 이상 영문과 특수문자 조합">
+                            </li>
+                            <li>
+                                <div>비밀번호 확인</div>
+                                <input type="password" size="17" maxlength="20" id="password" name="password"
+                                    class="form-control" maxlength="20" required="required" aria-required="true"
+                                    placeholder="다시 한 번 입력하세요">
+
+                            </li>
+                            <li>
+                                <div>이름</div>
+                                <input type="text" name="name" id="user_name" class="form-control" maxlength="6"
+                                    required="required" aria-required="true" placeholder="이름(실명)을 입력하세요">
+                            </li>
+                            <li>
+                                <div>이메일</div>
+                                <input type="email" name="email" id="user_email" class="form-control"
+                                    required="required" aria-required="true" placeholder="ex) abc1234@abcd.com">
+                                <span id="emailChk"></span>
+                            </li>
+                            <li>
+                                <div>성별</div>
+                                <p>
+                                    <label for="male">남성</label><input id="male" type="radio" value="남성" name="gd">
+                                    <label for="female">여성</label><input id="female" type="radio" checked value="여성"
+                                        name="gd">
+                                </p>
+                            </li>
+                            <li>
+                                <div>휴대전화</div>
+                                <input type="phone-no" name="phone-no" id="phone-no" class="form-control"
+                                    required="required" aria-required="true" maxlength="15"
+                                    placeholder=" '-' 없이 입력해 주세요">
+                                <span id="PhoneChk"></span>
+                                <!-- <button class="request disabled">인증요청</button>  -->
+                            </li>
+                        </ul>
+
+                        <div class="sign-up-btn">
+                            <button class="btn">회원가입</button>
+                        </div>
+                    </form>
+
+                </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // 입력값 검증 통과 여부 배열
+        const checkResultList = [false, false, false, false, false];
+
+        // 아이디 검사 정규표현식
+        const accountPattern = /^[a-zA-Z0-9]{4,14}$/;
+
+        //아이디 입력값 검증
+        const $idInput = document.getElementById('accound-id');
+
+        $idInput.onkeyup = e => {
+            const idValue = $idInput.value;
+            // console.log(idValue);
+
+            if (idValue.trim() == '') {
+                $idInput.style.borderColor = 'gray';
+                document.getElementById('idChk').innerHTML =
+                    '<b style="color: gray; font-size: 12px;"> - 아이디를 입력해주세요.</b>';
+                checkResultList[0] = false;
+            } else if (!accountPattern.test(idValue)) {
+                $idInput.style.borderColor = 'gray';
+                document.getElementById('idChk').innerHTML =
+                    '<b style="color: gray; font-size: 12px;"> - 아이디는 4~14글자의 영문, 숫자로 입력하세요.</b>';
+                checkResultList[0] = false;
+            } else {
+                $idInput.style.borderColor = '#1c5800';
+                document.getElementById('idChk').innerHTML = '<b style="color: #1c5800; font-size: 12px;"> - 사용가능한 아이디입니다. </b>';
+                checkResultList[0] = true;
+
+            }
+
+        };
+    </script>
+
+</body>
+
+</html>

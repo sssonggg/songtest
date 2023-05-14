@@ -93,9 +93,11 @@ span[id] {
 
 .sign-btn {
     padding-bottom: 50px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.sign-btn:hover{
+#btn:hover{
     background-color: #b0b0b0;
     color: #000000;
 }

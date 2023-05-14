@@ -16,7 +16,7 @@ body {
 
 span[id] {
     display: block;
-    /* width: 160px; */
+    width: 200px;
     padding: 5px 0 0 15px;
 }
 
@@ -67,7 +67,9 @@ span[id] {
 
 .sign-up-body #signUpForm li div {
     width: 150px;
-    list-style: none;
+}
+.sign-up-body #signUpForm ul li span{
+    width: 420px;
 }
 
 .sign-up-body #signUpForm li .form-control {
@@ -100,6 +102,8 @@ span[id] {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    cursor: pointer;
 }
 
 /* 기타 */

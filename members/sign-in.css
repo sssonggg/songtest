@@ -3,7 +3,8 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #072000;
+    /* background-color: #072000; */
+    background-color: #000000;
 }
 
 .container {
@@ -28,7 +29,8 @@ span[id] {
 #sign-in-header .head1 {
     font-weight: 500;
     font-size: 3em;
-    color: #1c5800;
+    /* color: #1c5800; */
+    color: #000000;
 }
 
 .head2 {
@@ -36,11 +38,11 @@ span[id] {
     font-size: 1em;
     font-weight: 600;
 }
+
 /* 로그인 중앙부 */
 .sign-in-body {
     background-color: #ebebeb;
 }
-
 
 .sign-in-body form ul {
     /* border: 1px solid #000; */
@@ -71,7 +73,6 @@ span[id] {
 
 
 /* 로그인 하단부 */
-
 .sign-in-wrap #sign-btn .sign-btn {
     background: #6d6d6d;
     padding: 0;
@@ -92,6 +93,11 @@ span[id] {
 
 .sign-btn {
     padding-bottom: 50px;
+}
+
+.sign-btn:hover{
+    background-color: #b0b0b0;
+    color: #000000;
 }
 
 .line_lr {

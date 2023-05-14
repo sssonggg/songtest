@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: #072000;
+    /* background-color: #072000; */
+    background-color: #000000;
 }
 
 .container {
@@ -29,7 +30,8 @@ span[id] {
 .head1 {
     font-size: 2.2em;
     font-weight: 600;
-    color: #1c5800;
+    /* color: #1c5800; */
+    color: #030303;
     margin-bottom: 30px;
 }
 
@@ -42,7 +44,7 @@ span[id] {
 
 /* 로그인 중앙부 */
 .sign-up-body {
-    padding-top: 50px;
+    padding: 50px 0;
     background-color: #ebebeb;
 }
 
@@ -88,10 +90,9 @@ span[id] {
     background: #6d6d6d;
     margin: auto;
 
-    width: 150px;
+    width: 585px;
     height: 40px;
     border-style: none;
-    border-radius: 5%;
 
     font-size: 1em;
     color: white;
@@ -99,4 +100,19 @@ span[id] {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* 기타 */
+.del-btn {
+    outline: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(255, 0, 140);
+    opacity: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+    cursor: pointer;
 }

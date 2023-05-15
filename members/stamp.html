@@ -18,26 +18,8 @@
                    <hr>
                 </div>
                 <div class="map-main">
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
-                    <div class="stamp-shape"></div>
                     
-                </div>
+                  </div>
                 <div class="map-footer">오늘의 STAMP 완료</div>
             </div>
             <div class="my-stamp-wrap">
@@ -48,22 +30,22 @@
                                 <img src="https://cdn-icons-png.flaticon.com/128/753/753344.png"> 
                             </div>
                         </li>
-                        <li>
+                        <li class="stamp-3rd">
                             게시물
                             <div>
                                 <p>1</p>
                                 <p>3</p>
                              </div>
                         </li>
-                        <li>배너
+                        <li class="stamp-3rd">배너
                             <div>
                                 <p>1</p>
                                 <p>3</p>
                              </div>
                         </li>
-                        <li>스탬프
+                        <li>누적 스탬프
                             <div>
-                                <p id="count-stamp">15개</p>
+                                <p id="count-stamp">18개</p>
                              </div>
                         </li>
                     </ul>
@@ -72,7 +54,7 @@
             <div class="card-wrap">
                 <div class="stamp-card">
                     <ul>
-                        <li>
+                        <li id="stamp-card">
                             <div>?</div>
                             <span>comming soon</span> 
                         </li>
@@ -101,7 +83,15 @@
             </div>
         </div>
     </div>
-sc
+    <script>
+       const mapMain = document.querySelector('.map-main');
+
+        for (let i = 0; i < 18; i++) {
+        const stampShape = document.createElement('div');
+        stampShape.classList.add('stamp-shape');
+        mapMain.appendChild(stampShape);
+        }
+      </script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 /* 이벤트창 전체 */
 .event-container {
-    margin: 200px auto;
+    margin: 100px auto;
     width: 1000px;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     width: 93%;
     margin: 60px auto;
     background:#fff;
-    border: 2px solid #c2c451;
+    border: 1px solid #ffffff;
     border-radius: 10px;
 }
 .stamp-map .map-header {
@@ -46,17 +46,18 @@
 
     margin: 15px;
     border-radius: 50%;
-    background: #afafaf;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/8610/8610016.png");
+    background-size: contain;
 }
 
  .map-footer{
     margin: 20px auto;
     background: rgb(185, 185, 185);
-    width: 270px;
+    box-shadow: 1px 1px 3px 1px rgba(60, 60, 60, 0.2);
+    width: 300px;
     height: 60px;
     border-radius: 20px;
-    /* box-shadow: 2px 2px 1px 1px rgb(75, 75, 75); */
-
+   
     text-align: center;
     line-height: 60px;
 
@@ -68,8 +69,8 @@
 .my-stamp-wrap {
     width: 93%;
     height: 220px;
-    margin: 0 auto;
-    
+    margin: 0 auto 30px;
+    border-radius: 10px;
     background: #ffffff;
 }
 .my-stamp-wrap .my-stamp ul {
@@ -81,25 +82,40 @@
     padding : 25px;
     background: #ffffff;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
 }
+
 .my-stamp img {
+    padding-top: 20px;
     margin: 0 auto;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 .my-stamp div {
-    padding-top: 30px;
+    padding-top: 20px;
     width: 100px;
     width: 100px;
     display: flex;
     flex-direction: column;
-
+}
+.my-stamp .stamp-3rd div {
+    position: relative;
+}
+.my-stamp .stamp-3rd p {
+    font-size: 45px;
+}
+.my-stamp .stamp-3rd p:first-child {
+    color: #767676;
+    padding-right: 15px;
+}
+.my-stamp .stamp-3rd p:last-child {
+    padding-left: 15px;
 }
 #count-stamp {
-    color: #dad60a;
-    font-size: 40px;
+    padding-top: 20px;
+    color: #9d0f0f;
+    font-size: 48px;
 }
 
 /* 뽑기 카드 */
@@ -117,9 +133,19 @@
     width: 27%;
     height: 330px;
     margin: 30px auto;
-    background: #dad60a;
-    border: 1px solid #000;
+    background: rgb(184, 184, 184);
+     /* border: 1px solid #000; */
     border-radius: 10px;
+}
+.card-wrap .stamp-card ul li:first-child {
+    background: #dad60a;
+    color:#dad60a;
+    box-shadow: 2px 3px 3px 1px rgba(255, 255, 255, 0.3);
+}
+.card-wrap .stamp-card ul li:hover{
+    background: #dad60a;
+    color:#dad60a;
+    box-shadow: 2px 3px 3px 1px rgba(255, 255, 255, 0.3);
 }
 .card-wrap .stamp-card ul li div{
     width: 80px;
@@ -128,7 +154,7 @@
     border-radius: 10px;
     margin: 50px auto;
 
-    color: #dad60a;
+    color:  rgb(184, 184, 184);
     font-size: 70px;
     font-weight: bold;
     text-align: center;

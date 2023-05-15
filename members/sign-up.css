@@ -5,7 +5,7 @@
 
 body {
     /* background-color: #072000; */
-    background-color: #000000;
+    background-color: #1e1d21;
 }
 
 .container {
@@ -89,12 +89,13 @@ span[id] {
 }
 
 .sign-up-btn .btn {
-    background: #6d6d6d;
+    background:#494949;
     margin: auto;
 
     width: 585px;
     height: 40px;
     border-style: none;
+    border-radius: 3px;
 
     font-size: 1em;
     color: white;

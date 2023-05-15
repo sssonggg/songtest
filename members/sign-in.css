@@ -4,7 +4,7 @@
 }
 body{
     /* background-color: #072000; */
-    background-color: #000000;
+    background-color:#1e1d21;
 }
 
 .container {
@@ -74,14 +74,14 @@ span[id] {
 
 /* 로그인 하단부 */
 .sign-in-wrap #sign-btn .sign-btn {
-    background: #6d6d6d;
+    background:#494949;
     padding: 0;
     margin: auto;
 
     width: 420px;
-    height: 35px;
+    height: 38px;
     border-style: none;
-    /* border-radius: 5%; */
+    border-radius: 3px;
     
     font-size: 0.8em;
     color: white;

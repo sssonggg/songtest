@@ -1,40 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="offer-restaurant.css">
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="offer-restaurant.css">
 
-    <link rel="stylesheet" href="../members/ex/header.css">
-    <title>Mountain-Do Offer</title>
+  <link rel="stylesheet" href="../members/ex/header.css">
+  <title>지도 마커 생성하기</title>
+
 </head>
 
 <body>
-    <header class="header-container">
-        <div class="header-wrapper">
-            <ul class="category-wrapper">
-                <li><a href="" class="">추천 정보</a></li>
-                <li><a href="" class="">커뮤니티</a></li>
-                <li><a href="" class="">모임</a></li>
-                <li><a href="" class="">중고거래</a></li>
-                <li><a href="" class="">스탬프</a></li>
-            </ul>
-            <!-- <img src="jpg/logo(white).png" alt="" class="logo"> -->
+  <header class="header-container">
+    <div class="header-wrapper">
+        <ul class="category-wrapper">
+            <li><a href="" class="">추천 정보</a></li>
+            <li><a href="" class="">커뮤니티</a></li>
+            <li><a href="" class="">모임</a></li>
+            <li><a href="" class="">중고거래</a></li>
+            <li><a href="" class="">스탬프</a></li>
+        </ul>
+        <!-- <img src="jpg/logo(white).png" alt="" class="logo"> -->
 
-            <ul class="login-wrapper">
-                <li><a href="sign-up.html" class="signUp-btn">Sign up</a></li>
-                <li><a href="sign-in.html" class="signIn-btn">Sign in</a></li>
-            </ul>
-        </div>
-    </header>
+        <ul class="login-wrapper">
+            <li><a href="sign-up.html" class="signUp-btn">Sign up</a></li>
+            <li><a href="sign-in.html" class="signIn-btn">Sign in</a></li>
+        </ul>
+    </div>
+</header>
 
-    <!-- 한국의 10대 명산 추천 -->
-    <div class="offer-course-top50">
-    
-        <!-- 지도 html -->
+<!-- 한국의 10대 명산 추천 -->
+<div class="offer-course-top50">
+  <!-- 지도 html -->
   <div id="map" style="width:500px;height:800px;"></div>
   <p>
     <button onclick="setOverlayMapTypeId('traffic')">교통정보 보기</button>
@@ -100,7 +101,7 @@
     var map = new kakao.maps.Map(mapContainer, mapOption);
 
     var imageSrc = 'https://cdn-icons-png.flaticon.com/128/5695/5695633.png', // 마커이미지의 주소  
-        imageSize = new kakao.maps.Size(55, 60), // 마커이미지의 크기
+        imageSize = new kakao.maps.Size(50, 54), // 마커이미지의 크기
         imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션
       
     // 마커이미지를 생성
@@ -117,35 +118,37 @@
         marker.setMap(map);
 
         
-        (function(marker, mountains) {
-      // 마크 클릭 시
-      kakao.maps.event.addListener(marker, 'click', function() {
-        var overlay = new kakao.maps.CustomOverlay({
-          // 오버레이에 띄울 내용
-          content: '<div class="wrap">' +
-                '    <div class="info">' +
-                '        <div class="title">' +
-                mountains.title +
-                '        </div>' +
-                '        <div class="body">' +
-                '            <div class="desc">' +
-                '                <div class="ellipsis">' + mountains.name + '</div>' +
-                '		       <div class="jibun ellipsis">' + mountains.name + '</div>' +
-                '            </div>' +
-                '        </div>' +
-                '    </div>' +
-                '</div>',
-          map: map,
-          position: marker.getPosition()
-        });
-        // 아무데나 클릭하게되면 overlay를 끄기
-        kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
-          overlay.setMap(null)
-        })
-        console.log(overlay);
-        overlay.setMap(map);
-      })
-    })(marker, positions[i])
+    //     (function(marker, mountains) {
+    //   // 마크 클릭 시
+    //   kakao.maps.event.addListener(marker, 'click', function() {
+    //     var overlay = new kakao.maps.CustomOverlay({
+    //       // 오버레이에 띄울 내용
+    //       content: '<div class="wrap">' +
+    //             '    <div class="info">' +
+    //             '        <div class="title">' +
+    //             mountains.title +
+    //             '        </div>' +
+    //             '        <div class="body">' +
+    //             '            <div class="desc">' +
+    //             '                <div class="ellipsis">' + mountains.name + '</div>' +
+    //             '		       <div class="jibun ellipsis">' + mountains.name + '</div>' +
+    //             '            </div>' +
+    //             '        </div>' +
+    //             '    </div>' +
+    //             '</div>',
+    //       map: map,
+    //       position: marker.getPosition()
+    //     });
+    //     // 아무데나 클릭하게되면 overlay를 끄기
+    //     kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
+    //       overlay.setMap(null)
+    //     })
+    //     console.log(overlay);
+    //     overlay.setMap(map);
+    //   })
+    // })(marker, positions[i])
+
+
 
         // // 커스텀 오버레이에 표출될 내용
         // var content = '<div class="customoverlay">' +
@@ -208,6 +211,5 @@
 
 
   </script>
-
 </body>
 </html>

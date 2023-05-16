@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequiredArgsConstructor
-@RequestMapping("/map")
 @Slf4j
 public class mapController {
 
@@ -20,5 +18,10 @@ public class mapController {
     @GetMapping("/weather")
     public String test() {
         return "weather/weather01";
+    }
+
+    @GetMapping("/sign-in")
+    public String test() {
+        return "sign-in";
     }
 }

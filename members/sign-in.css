@@ -102,6 +102,15 @@ span[id] {
     color: #000000;
 }
 
+#auto-login {
+    color: #494949;
+    border-style: none;
+}
+
+#sign-btn label {
+   text-align: left;
+}
+
 .line_lr {
     display:flex;
     flex-basis:100%;

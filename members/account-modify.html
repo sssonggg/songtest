@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 
@@ -7,35 +8,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="sign-up.css">
+    <link rel="stylesheet" href="account-modify.css">
     <link rel="stylesheet" href="../members/ex/header.css">
     <title>Mountain-Do</title>
 </head>
 
 <body>
     <div class="container">
-            <div class="sign-up-wrap">
-                <div class="sign-up-header">
+            <div class="modify-wrap">
+                <div class="modify-header">
                     <div class="header">
-                        <h1 class="head1">Mountain-Do 회원 정보 수정</h1>
-                    </div>
-                    <div class="head2">
-                        <p> 제한없이 트래킹을 즐기는 사람들의 놀이터,</p>
-                        <p> 정보제공, 커뮤니티, 자원공유 서비스를 이용해보세요. </p>
+                        <h1 class="head1">Mountain-Do </h1>
+                        <h2 class="head2"> 회원 정보 수정</h2>
                     </div>
                 </div>
 
-                <div class="sign-up-body">
-                    <form action="/members/sign-up" name="signup" id="signUpForm" method="post">
+                <div class="modify-body">
+                    <form action="/account/sign-in" name="accountModify" id="accountModifyForm" method="post">
                         <ul>
                             <li>
                                 <div>아이디</div>
                                 <div>
-                                    <input type="text" name="account-id" id="accound-id" class="form-control"
-                                        maxlength="15" required="required" aria-required="true"
-                                        placeholder="영문, 숫자를 조합하여 4-14자리">
-                                    <span id="idChk"></span>
+                                    <input type="text" name="account-id" id="account-id" class="form-control"
+                                        value="${a.accountId}" readonly>
+                    
                                 </div>
+                            </li>
+                            <li>
+                                <div>이름</div>
+                                <input type="text" name="name" id="user_name" class="form-control" value="${a.name}" readonly>              
                             </li>
                             <li>
                                 <div>비밀번호</div>
@@ -49,32 +50,20 @@
                             <li>
                                 <div>비밀번호 확인</div>
                                 <div>
-                                <input type="re-password" size="17" maxlength="20" id="re-password" name="re-password"
+                                <input type="password" size="17" maxlength="20" id="re-password" name="re-password"
                                     class="form-control" maxlength="20" required="required" aria-required="true"
                                     placeholder="다시 한 번 입력하세요">
                                     <span id="PWReChk"></span>
                                 </div>
                             </li>
-                            <li>
-                                <div>이름</div>
-                                <input type="text" name="name" id="user_name" class="form-control" maxlength="6"
-                                    required="required" aria-required="true" placeholder="이름(실명)을 입력하세요">
-                                  
-                            </li>
+                           
                             <li>
                                 <div>이메일</div>
                                 <div>
                                 <input type="email" name="email" id="user-email" class="form-control"
                                     required="required" aria-required="true" placeholder="ex) abc1234@abcd.com">
-                                <span id="emailChk"></span>
+                                    <span id="emailChk"></span>
                                  </div>
-                            </li>
-                            <li>
-                                <div>성별</div>
-                                <p>
-                                    <label for="male">남성</label><input id="male" type="radio" value="남성" name="gd">
-                                    <label for="female">여성</label><input id="female" type="radio" checked value="여성" name="gd">
-                                </p>
                             </li>
                             <li>
                                 <div>휴대전화</div>
@@ -84,12 +73,11 @@
                                     placeholder=" '-' 없이 입력해 주세요">
                                 <span id="PhoneChk"></span>
                             </div>
-                                <!-- <button class="request disabled">인증요청</button>  -->
                             </li>
                         </ul>
 
-                        <div class="sign-up-btn">
-                            <button class="btn">회원가입</button>
+                        <div class="modify-btn">
+                            <button class="btn">수정완료</button>
                         </div>
                     </form>
                     
@@ -102,34 +90,7 @@
         // 입력값 검증 통과 여부 배열
         const checkResultList = [false, false, false, false, false];
 
-        // 아이디 검사 정규표현식
-        const accountPattern = /^[a-zA-Z0-9]{4,14}$/;
-
-        //아이디 입력값 검증
-        const $idInput = document.getElementById('accound-id');
-
-        $idInput.onkeyup = e => {
-            const idValue = $idInput.value;
-            // console.log(idValue);
-
-            if (idValue.trim() == '') {
-                $idInput.style.borderColor = 'gray';
-                document.getElementById('idChk').innerHTML =
-                    '<b style="color: gray; font-size: 12px;"> - 아이디를 입력해주세요.</b>';
-                checkResultList[0] = false;
-            } else if (!accountPattern.test(idValue)) {
-                $idInput.style.borderColor = 'gray';
-                document.getElementById('idChk').innerHTML =
-                    '<b style="color: gray; font-size: 12px;"> - 아이디는 4~14글자의 영문, 숫자로 입력하세요.</b>';
-                checkResultList[0] = false;
-            } else {
-                $idInput.style.borderColor = '#1c5800';
-                document.getElementById('idChk').innerHTML = '<b style="color: #1c5800; font-size: 12px;"> - 사용가능한 아이디입니다. </b>';
-                checkResultList[0] = true;
-
-            }
-
-        };
+       
 
             // 패스워드 검사 정규표현식
             const passwordPattern = /([a-zA-Z0-9].*[!,@,#,$,%,^,&,*,?,_,~])|([!,@,#,$,%,^,&,*,?,_,~].*[a-zA-Z0-9]).{8,}/;
@@ -187,35 +148,6 @@
                         = '<b style="color: #1c5800; font-size: 12px;"> - 비밀번호가 확인되었습니다.</b>';
                         checkResultList[2] = true;
                     
-                }
-            };
-
-                        
-            // 이름 검사 정규표현식
-            const namePattern = /^[가-힣]+$/;
-
-            // 이름 입력값 검증
-            const $nameInput = document.getElementById('user-name');
-
-            $nameInput.onkeyup = e => {
-
-                const nameValue = $nameInput.value;
-
-                if (nameValue.trim() === '') {
-                    $nameInput.style.borderColor = 'gray';
-                    document.getElementById('nameChk').innerHTML
-                        = '<b style="color: gray; font-size: 12px;"> - 이름은 필수 정보입니다.</b>';
-                        checkResultList[3] = false;
-                } else if (!namePattern.test(nameValue)) {
-                    $nameInput.style.borderColor = 'gray';
-                    document.getElementById('nameChk').innerHTML
-                        = '<b style="color: gray; font-size: 12px;"> - 이름은 한글로 작성해주세요.</b>';
-                        checkResultList[3] = false;
-                } else {
-                    $nameInput.style.borderColor = '#1c5800';
-                    document.getElementById('nameChk').innerHTML
-                        = '<b style="color: #1c5800; font-size: 12px;"> - 사용가능한 이름입니다.</b>';
-                        checkResultList[3] = true;
                 }
             };
 

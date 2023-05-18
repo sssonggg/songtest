@@ -106,6 +106,12 @@ span[id] {
     color: #494949;
     border-style: none;
 }
+#sign-btn 
+
+#sign-btn label {
+    color: #6e6e6e;
+    font-size : 20px;
+}
 
 #sign-btn label {
    text-align: left;

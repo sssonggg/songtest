@@ -13,7 +13,7 @@
 
 <body id="body-color">
 
-    <form action="" method="post" id="write-porm">
+    <form action="/offer/offer-write" method="post" id="write-form">
         <input type="hidden" name="id" value="test1">
         <div class="write-container">
             <div class="write-wrapper">
@@ -24,19 +24,44 @@
                         <option value="offer-restaurant">맛집 추천</option>
                     </select>
                     <div class="section section1">
-                        <textarea name="title" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
-                        <div><input type="file" id="image" name="image" required></div>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                        <textarea name="title1" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
+                        <div>
+                            <label for="file">
+                                <div class="btn-upload"></div>
+                            </label>
+                              <input type="file" name="articleImage1" id="image" required>
+                        </div>
+                        <textarea name="articleContent1" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                      </div>
                      <div class="section section2">
-                        <textarea name="title" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
-                        <div><input type="file" id="image" name="image" required></div>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                        <textarea name="title2" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
+                        <div>
+                            <label for="file">
+                                <div class="btn-upload"></div>
+                            </label>
+                              <input type="file" name="articleImage2" id="image" required>
+                        </div>
+                        <textarea name="articleContent2" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                      </div>
                      <div class="section section3">
-                        <textarea name="title" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
-                        <div><input type="file" id="image" name="image" required></div>
-                        <textarea name="content" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                        <textarea name="title3" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
+                        <div>
+                            <label for="file">
+                                <div class="btn-upload"></div>
+                            </label>
+                              <input type="file" name="articleImage3" id="image" required>
+                        </div>
+                        <textarea name="articleContent3" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+                     </div>
+                     <div class="section section4">
+                        <textarea name="title4" id="title" cols="30" rows="10" placeholder="제목을 입력해주세요"></textarea>
+                        <div>
+                            <label for="file">
+                                <div class="btn-upload"></div>
+                            </label>
+                              <input type="file" name="articleImage4" id="image" required>
+                        </div>
+                        <textarea name="articleContent4" id="content" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
                      </div>
                     <div class="button-wrapper">
                         <button class="submit-btn">작성하기</button>
@@ -49,20 +74,18 @@
     <script>
 
         const $selected = document.getElementById('categorySelect');
-        const $form = document.getElementById('write-porm');
+        const $form = document.getElementById('write-form');
 
         $form.addEventListener('submit', function (event) {
             event.preventDefault(); // 폼 제출 기본 동작 중단
             const selectedValue = $selected.value;
             let link = '';
             // action 속성 설정
-            if (selectedValue === 'feed') {
-                $form.action = '/feed/write';
-            } else if (selectedValue === 'review') {
-                $form.action = '/review/write';
-            } else if (selectedValue === 'issue') {
-                $form.action = '/issue/write';
-            }
+            if (selectedValue === 'offer-main') {
+                $form.action = '/offer/offer-main';
+            } else if (selectedValue === 'offer-restaurant') {
+                $form.action = '/offer/offer-restaurant';
+            } 
 
             // 폼 제출
             $form.submit();
